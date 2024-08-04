@@ -5,7 +5,6 @@ public class Filiere {
 	private int numFiliere;
 	private String nomFiliere;
 
-	
 	public Filiere() {
 		super();
 	}
@@ -13,6 +12,10 @@ public class Filiere {
 	public Filiere(int numFiliere, String nomFiliere) {
 		super();
 		this.numFiliere = numFiliere;
+		this.nomFiliere = nomFiliere;
+	}
+
+	public Filiere(String nomFiliere) {
 		this.nomFiliere = nomFiliere;
 	}
 
@@ -37,5 +40,4 @@ public class Filiere {
 		return "Filiere [numFiliere=" + numFiliere + ", nomFiliere=" + nomFiliere + "]";
 	}
 
-	
 }

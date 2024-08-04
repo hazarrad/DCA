@@ -11,7 +11,7 @@ public final class Connexion {
 
 	private final String url = "jdbc:mysql://localhost:3306/Ecole";
 	private final String username = "root";
-	private final String password = "xxxxxxx";
+	private final String password = "prefab2022";
 
 	private Connection connection = null;
 
@@ -44,14 +44,8 @@ public final class Connexion {
 	}
 
 	public void closeConnection() {
-
-		try {
-			if (!connection.isClosed()) {
-				connection.close();
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		if (instance != null)
+			instance = null;
 	}
 
 	@Override
