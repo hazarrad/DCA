@@ -10,19 +10,19 @@ public class EtudiantDAO implements IDAO<Etudiant> { // Pour les opérations CRUD
 
 	private static final Connexion con = Connexion.getInstance();
 
-	private static final String REQ_CREATE = "INSERT INTO Etudiant (nomEtudiant) VALUES (?)";
-	private static final String REQ_READ = "SELECT * FROM Etudiant WHERE numEtudiant=?";
+	private static final String REQ_CREATE = "INSERT INTO Etudiant (prenomEtu,nomEtu) VALUES (?,?)";
+	private static final String REQ_READ = "SELECT * FROM Etudiant WHERE idEtu=?";
 	private static final String REQ_READ_ALL = "SELECT * FROM Etudiant";
-	private static final String REQ_UPDATE = "UPDATE Etudiant SET nomEtudiant=? WHERE numEtudiant=?";
-	private static final String REQ_DELETE = "DELETE FROM Etudiant WHERE numEtudiant=?";
+	private static final String REQ_UPDATE = "UPDATE Etudiant SET prenomEtu=?, nomEtu=? WHERE idEtu=?";
+	private static final String REQ_DELETE = "DELETE FROM Etudiant WHERE idEtu=?";
 
 	@Override
 	public boolean create(Etudiant EtudiantDTO) {
 		PreparedStatement ps = null;
 		try {
 			ps = con.getConnection().prepareStatement(REQ_CREATE);
-			ps.setString(1, EtudiantDTO.getNom());
-			ps.setString(2, EtudiantDTO.getPrenom());
+			ps.setString(1, EtudiantDTO.getPrenom());
+			ps.setString(2, EtudiantDTO.getNom());
 
 			if (ps.executeUpdate() > 0)
 				return true;
@@ -106,9 +106,9 @@ public class EtudiantDAO implements IDAO<Etudiant> { // Pour les opérations CRUD
 		PreparedStatement ps = null;
 		try {
 			ps = con.getConnection().prepareStatement(REQ_UPDATE);
-			ps.setInt(1, etudiantDTO.getId());
+			ps.setString(1, etudiantDTO.getPrenom());
 			ps.setString(2, etudiantDTO.getNom());
-			ps.setString(3, etudiantDTO.getPrenom());
+			ps.setInt(3, etudiantDTO.getId());
 
 			if (ps.executeUpdate() > 0) // si la MAJ est effectuée
 				return true;
