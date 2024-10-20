@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Ensure the container takes the full height */
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 50px;
+    text-align: center;
+}
+
+.menu {
+    background-color: #333;
+    /* Black background for the menu */
+    color: white;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /* Use flexbox for horizontal alignment */
+    justify-content: flex-start;
+    /* Align items to the left */
+}
+
+.menu li {
+    color: white;
+    /* Text color */
+    padding: 15px 20px;
+    /* Spacing around menu items */
+}
+
+main {
+    padding: 20px;
+}
+
+.content {
+    display: flex;
+    /* Use flexbox for layout */
+    flex: 1;
+    /* Allow content to grow */
+}
+
+
+.left-section {
+    flex: 0 0 70%;
+    /* Take 70% of the width */
+    padding: 20px;
+    background-color: #f0f0f0;
+    /* Light background for contrast */
+}
+
+.right-section {
+    flex: 0 0 30%;
+    /* Take 30% of the width */
+    padding: 20px;
+    background-color: #ddd;
+    /* Slightly darker background */
+}
+
+footer {
+    background-color: rgb(168, 168, 168);
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+
+.image-box {
+    background-color: rgb(121, 121, 121); /* Green background */
+    padding-right: 150px;
+    padding-bottom: 150px;
+    border-radius: 0px; /* Rounded corners */
+    text-align: center; /* Center the text and image */
+    position: relative; /* Positioning for the hint text */
+}
+
+
+.hint-text {
+    position: absolute; /* Position the hint text over the image box */
+    top: 10px;
+    left: 10px;
+    color: black; /* White text for contrast */
+    font-weight: bold; /* Bold text */
+}
+
+.image-box img {
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 4px; /* Slightly rounded corners for the image */
+}
+
+.image-box-two {
+    background-color: rgb(121, 121, 121); /* Green background */
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 0px; /* Rounded corners */
+    text-align: center; /* Center the text and image */
+    position: relative; /* Positioning for the hint text */
+}
+
+@media (max-width: 700px) {
+    .menu {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+
+    .menu li {
+        width: 100%; /* Full width for each item */
+        text-align: center; /* Center text */
+    }
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .content {
+        flex-direction: column;
+        /* Stack sections vertically */
+    }
+
+    header {
+        text-align: center;
+        padding: 50px;
+    }
+
+
+    .left-section,
+    .right-section {
+        flex: 1;
+        /* Allow sections to take full width */
+        padding: 10px;
+        /* Adjust padding for smaller screens */
+    }
+}

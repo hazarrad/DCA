@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="stylesproducts.css">
+
+</head>
+
+<body>
+
+    <div class="menu">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main-title">
+        <h1>Home / Products</h1>
+    </div>
+
+    <div class="main-content">
+        <div class="sidebar">
+            <input type="text" placeholder="Search..." id="searchInput" class="search-input">
+            <h2>Company</h2>
+            <ul class="filter-options">
+                <li><a href="#" class="filter-btn" data-brand="all">All</a></li>
+                <li><a href="#" class="filter-btn" data-brand="IKEA">IKEA</a></li>
+                <li><a href="#" class="filter-btn" data-brand="Marcos">Marcos</a></li>
+                <li><a href="#" class="filter-btn" data-brand="Caressa">Caressa</a></li>
+                <li><a href="#" class="filter-btn" data-brand="Liddy">Liddy</a></li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="card-container" id="card-container">
+                <!-- Cards will be generated here -->
+            </div>
+        </div>
+
+        <script src="products.js"></script>
+
+    </div>
+
+</body>
+
+</html>
